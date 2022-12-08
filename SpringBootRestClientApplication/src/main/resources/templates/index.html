@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index-style.css">
+    <title>Enter the designation</title>
+</head>
+<body>
+    <div class="container">
+        <form th:action="/info">
+            <input required type = "text" placeholder = "Enter designation there..." th:object="${placeName}">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>
