@@ -2,24 +2,35 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="info-style.css">
+    <link rel="stylesheet" href="/info-style.css">
     <title>Info</title>
 </head>
 <body>
-    <h2>Info</h2>
-    <talbe>
-        <tr>
-            <td>Название</td>
-            <td th:text="${response.name}"></td>
-        </tr>
-        <tr>
-            <td>Широта</td>
-            <td th:text="${response.latitude}"></td>
-        </tr>
-        <tr>
-            <td>Долгота</td>
-            <td th:text="${response.longitude}"></td>
-        </tr>
-    </talbe>
+<div class="container">
+    <div class="header">
+        <h2>Info</h2>
+    </div>
+    <div class="table-cell">
+        <table>
+            <th:block th:each="response : ${responses}">
+                <tr class="tr">
+                    <td>Название</td>
+                    <td th:text="${response.name}"></td>
+                </tr>
+                <tr class="tr">
+                    <td>Широта</td>
+                    <td th:text="${response.latitude}"></td>
+                </tr>
+                <tr class="tr">
+                    <td>Долгота</td>
+                    <td th:text="${response.longitude}"></td>
+                </tr>
+            </th:block>
+        </table>
+        <a th:href="@{/}" >
+            <input type="submit" value="Back" class="button">
+        </a>
+    </div>
+</div>
 </body>
 </html>

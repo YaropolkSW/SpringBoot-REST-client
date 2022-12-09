@@ -1,12 +1,11 @@
 package com.spring.springboot.rest.springbootrestclientapplication.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.spring.springboot.rest.springbootrestclientapplication.service.CommunicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CommunicationController {
@@ -19,18 +18,17 @@ public class CommunicationController {
     }
 
     @GetMapping("/")
-    public String firstPage(final Model model) {
-        model.addAttribute("placeName", new String());
+    public String firstPage() {
         return "index";
     }
 
     @GetMapping("/info")
     public String getData(
-        @ModelAttribute("placeName") final String placeName,
+        @RequestParam("placeName") final String placeName,
         final Model model
-    ) throws JsonProcessingException {
+    ) {
 
-        model.addAttribute("response", communicationService.getData(placeName));
+        model.addAttribute("responses", communicationService.getData(placeName));
 
         return "info";
     }
