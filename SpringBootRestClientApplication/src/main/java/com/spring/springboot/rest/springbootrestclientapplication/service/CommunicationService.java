@@ -2,8 +2,6 @@ package com.spring.springboot.rest.springbootrestclientapplication.service;
 
 import com.spring.springboot.rest.springbootrestclientapplication.entity.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.ParameterizedTypeReference;
@@ -23,12 +21,10 @@ public class CommunicationService {
     private final static String UNDERLINE = "_";
 
     private final RestTemplate restTemplate;
-    private final CacheManager cacheManager;
 
     @Autowired
-    public CommunicationService(final RestTemplate restTemplate, CacheManager cacheManager) {
+    public CommunicationService(final RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-        this.cacheManager = cacheManager;
     }
 
     @Cacheable
