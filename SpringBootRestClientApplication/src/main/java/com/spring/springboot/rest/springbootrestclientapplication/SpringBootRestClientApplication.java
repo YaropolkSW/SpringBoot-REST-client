@@ -9,10 +9,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableCaching
 public class SpringBootRestClientApplication {
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootRestClientApplication.class, args);

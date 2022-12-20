@@ -1,26 +1,27 @@
 package com.spring.springboot.rest.springbootrestclientapplication.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.spring.springboot.rest.springbootrestclientapplication.deserializer.ResponseDesirializer;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@JsonDeserialize(using = ResponseDesirializer.class)
 public class Response {
-    private final float latitude;
-    private final float longitude;
-    private final String name;
+    private double longitude;
+    private double latitude;
+    private String name;
 
-    @JsonCreator
     public Response(
-        @JsonProperty("lat") final float latitude,
-        @JsonProperty("lon") final float longitude,
-        @JsonProperty("display_name") final String name
+            final double longitude,
+            final double latitude,
+            final String name
     ) {
-
-        this.latitude = latitude;
         this.longitude = longitude;
+        this.latitude = latitude;
         this.name = name;
     }
 }
