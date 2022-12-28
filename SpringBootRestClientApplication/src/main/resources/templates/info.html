@@ -19,11 +19,11 @@
                 </tr>
                 <tr class="tr">
                     <td>Широта</td>
-                    <td th:text="${response.latitude}"></td>
+                    <td th:text="${response.geojson.coordinatePoint.latitude}"></td>
                 </tr>
                 <tr class="tr">
                     <td>Долгота</td>
-                    <td th:text="${response.longitude}"></td>
+                    <td th:text="${response.geojson.coordinatePoint.longitude}"></td>
                 </tr>
             </th:block>
         </table>
