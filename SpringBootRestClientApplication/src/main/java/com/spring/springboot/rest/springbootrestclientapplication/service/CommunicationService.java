@@ -1,6 +1,5 @@
 package com.spring.springboot.rest.springbootrestclientapplication.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.springboot.rest.springbootrestclientapplication.dto.Response;
 import lombok.NoArgsConstructor;

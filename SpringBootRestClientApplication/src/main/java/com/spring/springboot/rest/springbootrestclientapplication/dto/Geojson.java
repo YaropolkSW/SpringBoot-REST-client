@@ -7,6 +7,8 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonDeserialize(using = GeojsonDesirializer.class)
